@@ -54,18 +54,17 @@ public class MuseumMembership {
 
     // Method to calculate the cost per museum visit based on membership type
     public double calculateMuseumVisitCost() {
-        switch (membershipType.toLowerCase()) {
-            case "general":
-                return GENERAL_COST_PER_VISIT;
-            case "premium":
-                return PREMIUM_COST_PER_VISIT;
-            case "all-access":
-                return ALL_ACCESS_COST_PER_VISIT;
-            default:
-                return 0.0; // If no valid membership type is provided
+         switch (membershipType) {
+             case "A":
+                 return GENERAL_COST_PER_VISIT; // Standard
+             case "B":
+                 return PREMIUM_COST_PER_VISIT; // Premium
+             case "C":
+                 return ALL_ACCESS_COST_PER_VISIT; // All-Access
+             default:
+                 return 0.0; // If no valid membership type is provided
         }
     }
-
     // Method to calculate the reservation fee based on the number of visits
     public double calculateMembershipReservationFee() {
         if (numberOfVisits >= 1 && numberOfVisits <= 8) {
